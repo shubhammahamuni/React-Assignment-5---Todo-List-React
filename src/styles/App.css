@@ -80,7 +80,7 @@ button{
  
 
 }
-.list_ ul li button{
+.delete , .edit{
 
     margin-left: 10px;
     background-color: #025955;
