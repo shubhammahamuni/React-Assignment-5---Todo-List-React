@@ -11,6 +11,7 @@ function App()
 
 	const handleonchange =(e)=>{
 		//setText(e.target.value)
+		
 		settask({task_name :e.target.value,edit: false, })
 			
 	
@@ -25,7 +26,10 @@ function App()
 		
 		//settask(task=>[...task ,text]);
 			//console.log(task);	
-		setlist(list=>[...list ,task] )
+			if(task.task_name != ""){
+				setlist(list=>[...list ,task] )
+			}
+		
 
 	}
 	const delete_todo_item = (element_tobe_deleted)=>{
@@ -49,15 +53,22 @@ function App()
 		//console.log(index);
 		var obj = list;
 		obj[index].task_name = text;
+
+			setlist(list=> [...list] , obj);
 		
-		setlist(list=> [...list] , obj);
+		
 
 	}
 	const handle_edit_save_button = (i)=>{
 		//setlist(list=> [...list] , obj)
 		var obj2  = list;
-		obj2[i].edit = false;
-		setlist(list=> [...list] , obj2);
+		
+		if(obj2[i].task_name != ""){
+			obj2[i].edit = false;
+			setlist(list=> [...list] , obj2);
+			
+		}
+		
 
 	}
 
