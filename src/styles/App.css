@@ -14,3 +14,103 @@ button{
 .bg-pink{
 	background-color:pink;
 }
+
+#btn{
+    height: 25px;
+    width: 50px;
+    margin-left: 10px;    
+
+}
+
+
+.input_boxes{
+    height: 50px;
+    background:#433520 ;
+    width: 500px;
+    
+    padding: 10px;
+
+}
+
+.input_boxes button {
+    background: brown;
+    border: none;
+    color: white;
+    
+
+}
+.input_boxes textarea {
+    background: #ccb9b9;
+    border: none;
+    color: brown;
+    height: 15px;
+    padding: 10px;
+    border-radius: 10px;
+
+
+}
+.list_{
+    height: auto;
+    background:#433520 ;
+    width: 500px;
+    
+    padding: 10px;
+    color: white;
+
+}
+.list_ ul{
+    
+    text-align: left;
+    margin-top: 10px;
+    padding: 15px ;
+    border: 1px solid white;
+    list-style: none;
+    border-radius: 10px;
+
+}
+.list_ ul li {
+    
+    margin: 10px;
+    background-color:#00917c;
+    padding: 5px;
+    position: relative;
+    width: auto;
+    height: auto;
+
+ 
+
+}
+.list_ ul li button{
+
+    margin-left: 10px;
+    background-color: #025955;
+    border: 0px;
+
+    
+ }
+ .list_item :focus{
+     
+    outline: none;
+ 
+     
+ }
+ .list_item {
+     
+    
+
+     border: 0px;
+     
+
+     
+ }
+ .editTask{
+     height: 20px;
+     width: 60px;
+     resize: none;
+    
+
+}
+.saveTask{
+  
+}
+ 

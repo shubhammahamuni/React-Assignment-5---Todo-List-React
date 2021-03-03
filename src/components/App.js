@@ -1,12 +1,80 @@
-import React from "react";
+
+import React , {useState ,useEffect, createRef , useRef}from "react";
 import "./../styles/App.css";
+import List from "./list/index"
 
 function App() 
 {
+	const[task ,settask] = useState({task_name:"",edit:false });
+	const[list , setlist] = useState([]);
+	 
+
+	const handleonchange =(e)=>{
+		//setText(e.target.value)
+		settask({task_name :e.target.value,edit: false, })
+			
+	
+	}
+		
+	
+
+
+	const handlesave = (e)=>{
+		
+		//console.log(task);
+		
+		//settask(task=>[...task ,text]);
+			//console.log(task);	
+		setlist(list=>[...list ,task] )
+
+	}
+	const delete_todo_item = (element_tobe_deleted)=>{
+		 setlist(list.filter((t)=>t.task_name!==element_tobe_deleted));
+	
+	}
+	const edit_todo_item = (element_tobe_edited,i)=>{
+		var temp = list;
+		temp.map((ele , index)=>{
+			if(ele.task_name == element_tobe_edited)
+			{
+				ele.edit = true;
+			}
+
+		})
+		setlist(list=> [...list] , temp);
+	}
+
+
+	const handle_edit=(text ,index)=>{
+		//console.log(index);
+		var obj = list;
+		obj[index].task_name = text;
+		
+		setlist(list=> [...list] , obj);
+
+	}
+	const handle_edit_save_button = (i)=>{
+		//setlist(list=> [...list] , obj)
+		var obj2  = list;
+		obj2[i].edit = false;
+		setlist(list=> [...list] , obj2);
+
+	}
+
+	
+
 	return (
 	<div id="main">
-	//Do not alter main div
-	//Please do not alter the functional component as tests depend on the type of component.
+		<div className="input_boxes"> 
+		<textarea id="task" onChange={handleonchange}  ></textarea>
+		<button id="btn" onClick={handlesave}>save</button>
+		</div>
+		 <List list={list} 
+		 delete_todo_item={delete_todo_item} 
+		 edit_todo_item = {edit_todo_item} 
+		 handle_edit={handle_edit} 
+		 handle_edit_save_button = {handle_edit_save_button}
+		 /> 
 	</div>
 	);
 }
