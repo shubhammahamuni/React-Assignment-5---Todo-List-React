@@ -63,11 +63,15 @@ function App()
 		//setlist(list=> [...list] , obj)
 		var obj2  = list;
 		
-		if(obj2[i].task_name != ""){
+		
 			obj2[i].edit = false;
-			setlist(list=> [...list] , obj2);
 			
-		}
+				setlist(list.filter((t)=>t.task_name!==""));
+				
+			
+			
+			
+		
 		
 
 	}
