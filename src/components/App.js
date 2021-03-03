@@ -64,9 +64,12 @@ function App()
 		var obj2  = list;
 		
 		
+			if(obj2[i].task_name  !=""){
 			obj2[i].edit = false;
-			
-				setlist(list.filter((t)=>t.task_name!==""));
+
+				setlist(list=> [...list] , obj2);
+			}
+				
 				
 			
 			
