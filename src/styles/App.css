@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     color: #27aedb;
     text-align: center;
     }
@@ -116,4 +116,65 @@ button{
 .saveTask{
   
 }
- 
+  */
+
+  .input_boxes
+  {
+      border: 1px solid black;
+      width: 300px;
+      display: flex;
+      justify-content: space-evenly;
+  
+  
+  }
+  .input_boxes textarea
+  {
+      
+      border: 0px;
+      resize: none;
+      border-bottom: 2px solid black;
+      margin: 0px;
+      text-decoration: double;
+      outline: none;
+      background-position: bottom;
+      overflow:auto;
+      
+  }
+  .input_boxes button
+  {
+      border: 0px;
+      outline: none;
+      border-radius: 10px;
+  }
+  .list_view{
+      border: 1px solid black;
+      width: 300px;
+      background-color: antiquewhite;
+  }
+  .list_item
+  {
+      
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      border-bottom: 1px solid black;
+  
+  }
+  .delete , .edit{
+
+    
+    
+    border: 0px;
+    display: inline;
+
+    
+ }
+ .editingarea textarea
+ {
+     margin: 0px;
+     padding: 0px;
+  height: 25px;
+  resize: none;
+
+ }

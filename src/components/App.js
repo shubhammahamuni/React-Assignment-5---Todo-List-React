@@ -5,12 +5,13 @@ import List from "./list/index"
 
 function App() 
 {
-	const[task ,settask] = useState({task_name:"",edit:false });
+	const[task ,settask] = useState({task_name:"",edit:false, });
 	const[list , setlist] = useState([]);
 	 
 
 	const handleonchange =(e)=>{
 		//setText(e.target.value)
+		//latest code.
 		
 		settask({task_name :e.target.value,edit: false, })
 			
@@ -32,8 +33,9 @@ function App()
 		
 
 	}
-	const delete_todo_item = (element_tobe_deleted)=>{
-		 setlist(list.filter((t)=>t.task_name!==element_tobe_deleted));
+	const delete_todo_item = (element_tobe_deleted , i)=>{
+		 setlist(list.filter((t, index)=> Number(i) !=index) );
+		
 	
 	}
 	const edit_todo_item = (element_tobe_edited,i)=>{
@@ -99,3 +101,5 @@ function App()
 
 
 export default App;
+
+
