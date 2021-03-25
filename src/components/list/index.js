@@ -10,15 +10,7 @@ function InputTask({list , delete_todo_item,edit_todo_item,handle_edit,handle_ed
         <ul>
 
 			
-          {/* {task.map((element, index)=>{
-               return(<li className="list" >{element}
-
-                   
-               <button className="delete"  onClick={()=> {delete_todo_item(element)}}>X</button>
-               <button className="edit"  onClick={()=> {edit_todo_item(element)}}>edit</button>
-              
-               </li>); 
-           })}    */}
+        
 
            {
                list.map((obj,i)=>{

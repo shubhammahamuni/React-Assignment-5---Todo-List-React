@@ -70,7 +70,16 @@ function App()
 			obj2[i].edit = false;
 
 				setlist(list=> [...list] , obj2);
+				
 			}
+			else
+			{
+				let temp = obj2.filter((inedx)=> {inedx != i})
+				setlist(temp);
+				
+
+			}
+			
 				
 				
 			
