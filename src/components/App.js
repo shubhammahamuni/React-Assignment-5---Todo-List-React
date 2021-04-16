@@ -7,6 +7,7 @@ function App()
 {
 	const[task ,settask] = useState({task_name:"",edit:false, });
 	const[list , setlist] = useState([]);
+	const[temp_text , settemtext] = useState("");
 	const ip = useRef(null);
 
 	const handleonchange =(e)=>{
@@ -59,19 +60,15 @@ function App()
 		var obj2  = list;
 		
 		
-			if(obj2[i].task_name  !=""){
-			obj2[i].edit = false;
+			if(temp_text.length >0){
+				obj2[i].task_name = temp_text;
+				obj2[i].edit = false;
 			
 				setlist(list=> [...list] , obj2);
+				settemtext("");
 			//	console.log(list.length);
 			}
-			else
-			{
-				let temp = obj2.filter((inedx)=> {inedx != i})
-				setlist(temp);
-				
-
-			}
+		
 			
 				
 				
@@ -83,13 +80,12 @@ function App()
 
 	}
 	const handle_edit=(text ,index)=>{
-		//console.log(index);
-		var obj = list;
-		obj[index].task_name = text;
-
-			setlist(list=> [...list] , obj);
 		
+		// var obj = list;
+		// obj[index].task_name = text;
+		// setlist(list=> [...list] , obj);
 		
+		settemtext(text);
 
 	}
 	
