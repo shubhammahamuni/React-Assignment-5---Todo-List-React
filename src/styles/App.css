@@ -164,9 +164,9 @@ button{
   .delete , .edit{
 
     
-    
+    margin-left: 20px;
     border: 0px;
-    display: inline;
+    
 
     
  }

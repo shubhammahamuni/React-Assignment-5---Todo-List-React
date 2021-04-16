@@ -64,7 +64,7 @@ function App()
 				obj2[i].task_name = temp_text;
 				obj2[i].edit = false;
 			
-				setlist(list=> [...list] , obj2);
+				setlist(obj2);
 				settemtext("");
 			//	console.log(list.length);
 			}
