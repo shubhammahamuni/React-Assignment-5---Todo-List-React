@@ -7,7 +7,7 @@ function App()
 {
 	const[task ,settask] = useState({task_name:"",edit:false, });
 	const[list , setlist] = useState([]);
-	 
+	const ip = useRef(null);
 
 	const handleonchange =(e)=>{
 		//setText(e.target.value)
@@ -30,6 +30,8 @@ function App()
 			if(task.task_name != ""){
 				setlist(list=>[...list ,task] )
 			}
+			settask({task_name:"",edit:false, });
+
 		
 
 	}
@@ -41,7 +43,7 @@ function App()
 	const edit_todo_item = (element_tobe_edited,i)=>{
 		var temp = list;
 		temp.map((ele , index)=>{
-			if(ele.task_name == element_tobe_edited)
+			if(index == i)
 			{
 				ele.edit = true;
 			}
@@ -51,16 +53,7 @@ function App()
 	}
 
 
-	const handle_edit=(text ,index)=>{
-		//console.log(index);
-		var obj = list;
-		obj[index].task_name = text;
-
-			setlist(list=> [...list] , obj);
-		
-		
-
-	}
+	
 	const handle_edit_save_button = (i)=>{
 		//setlist(list=> [...list] , obj)
 		var obj2  = list;
@@ -68,9 +61,9 @@ function App()
 		
 			if(obj2[i].task_name  !=""){
 			obj2[i].edit = false;
-
+			
 				setlist(list=> [...list] , obj2);
-				
+			//	console.log(list.length);
 			}
 			else
 			{
@@ -89,21 +82,30 @@ function App()
 		
 
 	}
+	const handle_edit=(text ,index)=>{
+		//console.log(index);
+		var obj = list;
+		obj[index].task_name = text;
 
+			setlist(list=> [...list] , obj);
+		
+		
+
+	}
 	
 
 	return (
 	<div id="main">
 		<div className="input_boxes"> 
-		<textarea id="task" onChange={handleonchange}  ></textarea>
+		<textarea id="task" onChange={handleonchange} value={task.task_name} placeholder="Add Tasks"></textarea>
 		<button id="btn" onClick={handlesave}>save</button>
 		</div>
 		 <List list={list} 
 		 delete_todo_item={delete_todo_item} 
 		 edit_todo_item = {edit_todo_item} 
-		 handle_edit={handle_edit} 
 		 handle_edit_save_button = {handle_edit_save_button}
-		 /> 
+		 handle_edit ={handle_edit}
+		/> 
 	</div>
 	);
 }
